@@ -137,6 +137,9 @@ namespace UseCase.Boundary
         public void Add(Func<bool> fails, string message, bool isUserFacing = true)
             => _validationRules.Add(new ValidationRule { Fails = fails, Problem = new ValidationProblem { Message = message, IsUserFacing = isUserFacing } });
 
+        public void Add(ValidationRule validationRule)
+            => _validationRules.Add(validationRule);
+
         public IEnumerator<ValidationRule> GetEnumerator()
             => _validationRules.GetEnumerator();
 

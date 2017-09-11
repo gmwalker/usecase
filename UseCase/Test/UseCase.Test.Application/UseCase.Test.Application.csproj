@@ -59,6 +59,10 @@
       <Project>{a1581ee3-c123-484c-90d1-651ef4b37332}</Project>
       <Name>UseCase.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\UseCase.Boundary\UseCase.Boundary.csproj">
+      <Project>{FF0D8F54-3C0D-4E78-9B54-F13E70C243B7}</Project>
+      <Name>UseCase.Boundary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
