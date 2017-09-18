@@ -1,12 +1,15 @@
 ﻿using System;
 using UseCase.Boundary;
 
-namespace UseCase.Application
+namespace UseCase.PhoneBook
 {
-    public class ExampleUseCase : UseCaseCommand
+    public class UpdatePersonUseCase : UseCaseCommand
     {
         protected override void DoWorkLoad()
         {
+            /*
+             * Storage - Update
+             */
             throw new NotImplementedException();
         }
     }

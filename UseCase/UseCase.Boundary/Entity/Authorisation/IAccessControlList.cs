@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 
+// ReSharper disable once CheckNamespace - This is where I want it
 namespace Entity.Authorisation
 {
     public interface IAccessControlList
@@ -26,7 +26,7 @@ namespace Entity.Authorisation
             return Id == other.Id;
         }
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -35,13 +35,13 @@ namespace Entity.Authorisation
             return Equals((AclUser)obj);
         }
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public override int GetHashCode() => Id;
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public static bool operator ==(AclUser left, AclUser right) => Equals(left, right);
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public static bool operator !=(AclUser left, AclUser right) => !Equals(left, right);
 
         #endregion
@@ -69,7 +69,7 @@ namespace Entity.Authorisation
             return Securable.Equals(other.Securable) && Operation.Equals(other.Operation);
         }
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -78,16 +78,16 @@ namespace Entity.Authorisation
             return Equals((AclPermission)obj);
         }
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public override int GetHashCode()
         {
             unchecked { return (Securable.GetHashCode() * 397) ^ Operation.GetHashCode(); }
         }
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public static bool operator ==(AclPermission left, AclPermission right) => Equals(left, right);
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public static bool operator !=(AclPermission left, AclPermission right) => !Equals(left, right);
 
         #endregion
@@ -104,7 +104,7 @@ namespace Entity.Authorisation
         public AclOperation Operation { get; set; }
     }
 
-    [Serializable]
+    //[Serializable]
     public class AclOperation : IEquatable<AclOperation>
     {
         #region Equality
@@ -116,7 +116,7 @@ namespace Entity.Authorisation
             return Id == other.Id;
         }
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -125,19 +125,19 @@ namespace Entity.Authorisation
             return Equals((AclOperation)obj);
         }
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public override int GetHashCode()
         {
             return Id;
         }
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public static bool operator ==(AclOperation left, AclOperation right)
         {
             return Equals(left, right);
         }
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public static bool operator !=(AclOperation left, AclOperation right)
         {
             return !Equals(left, right);
@@ -170,7 +170,7 @@ namespace Entity.Authorisation
             return Type == other.Type && Id == other.Id;
         }
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -179,7 +179,7 @@ namespace Entity.Authorisation
             return Equals((AclSecurable)obj);
         }
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public override int GetHashCode()
         {
             unchecked
@@ -188,10 +188,10 @@ namespace Entity.Authorisation
             }
         }
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public static bool operator ==(AclSecurable left, AclSecurable right) => Equals(left, right);
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public static bool operator !=(AclSecurable left, AclSecurable right) => !Equals(left, right);
 
         #endregion
@@ -246,13 +246,13 @@ namespace Entity.Authorisation
 
     public class AuthorisationException : Exception
     {
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public AuthorisationException() { }
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public AuthorisationException(string message) : base(message) { }
 
-        [ExcludeFromCodeCoverage]
+        //[ExcludeFromCodeCoverage]
         public AuthorisationException(string message, Exception innerException) : base(message, innerException) { }
     }
 

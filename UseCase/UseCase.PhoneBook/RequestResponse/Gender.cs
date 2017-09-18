@@ -1,4 +1,4 @@
-﻿namespace UseCase.Application.RequestResponse
+﻿namespace UseCase.PhoneBook.RequestResponse
 {
     public enum Gender
     {
